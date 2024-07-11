@@ -24,7 +24,7 @@ class ResultsScreen extends StatelessWidget {
   final List<String> selectedAnswers;
   final void Function() restartQuiz;
 
-  List<SummaryDatum> getSummaryData() {
+  List<SummaryDatum> get summaryData {
     final List<SummaryDatum> summary = [];
 
     for (int i = 0; i < selectedAnswers.length; i++) {
@@ -41,7 +41,6 @@ class ResultsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final summaryData = getSummaryData();
     final numTotalQuestions = questions.length;
     final numCorrectAnswers =
         summaryData.where((data) => data.isCorrect).length;
